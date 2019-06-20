@@ -1,7 +1,7 @@
 
 
-#ifndef SMCallTraceCore_h
-#define SMCallTraceCore_h
+#ifndef VVCallTraceCore_h
+#define VVCallTraceCore_h
 
 #include <stdio.h>
 #include <objc/objc.h>
@@ -33,4 +33,4 @@ extern vv_call_record *vv_get_call_records(int *num);
 extern void vv_clear_call_records(void);
 
 
-#endif /* SMCallTraceCore_h */
+#endif /* VVCallTraceCore_h */
