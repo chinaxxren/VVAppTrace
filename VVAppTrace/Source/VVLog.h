@@ -1,10 +1,3 @@
-//
-//  VVLog.h
-//  AppTrace
-//
-//  Created by Jiangmingz on 2019/6/19.
-//  Copyright © 2019 Jiangmingz. All rights reserved.
-//
 
 #ifndef VVLog_h
 #define VVLog_h

@@ -1,10 +1,3 @@
-//
-//  VVTrace.c
-//  AppTrace
-//
-//  Created by Jiangmingz on 2019/6/19.
-//  Copyright © 2019 Jiangmingz. All rights reserved.
-//
 
 #include "VVTrace.h"
 
