@@ -2,7 +2,7 @@
 #import "VVCallTrace.h"
 
 #import "VVCallLib.h"
-#import "VVCallTraceTimeCostModel.h"
+#import "VVCallCostModel.h"
 #import "VVCallTraceCore.h"
 
 @implementation VVCallTrace
@@ -40,12 +40,12 @@
     [VVCallTrace start];
 }
 
-+ (void)isOpenSaveRecords:(BOOL)save {
-    vv_save_record(save ? true : false);
++ (void)isOnlyMainRecord:(BOOL)isMain {
+    vv_main_record(isMain ? true : false);
 }
 
-+ (void)isOnlyMainRecord:(BOOL)main {
-    vv_main_record(main ? true:false);
++ (void)isOpenSaveRecords:(BOOL)isSave {
+    vv_save_record(isSave ? true : false);
 }
 
 + (void)stop {
@@ -53,13 +53,13 @@
     vv_clear_call_records();
 }
 
-+ (NSArray<VVCallTraceTimeCostModel *> *)getCallRecords {
-    NSMutableArray < VVCallTraceTimeCostModel * > *array = [NSMutableArray new];
++ (NSArray<VVCallCostModel *> *)getSaveRecords {
+    NSMutableArray < VVCallCostModel * > *array = [NSMutableArray new];
     int num = 0;
     vv_call_record *records = vv_get_call_records(&num);
     for (int i = 0; i < num; i++) {
         vv_call_record *rd = &records[i];
-        VVCallTraceTimeCostModel *model = [VVCallTraceTimeCostModel new];
+        VVCallCostModel *model = [VVCallCostModel new];
         model.className = NSStringFromClass(rd->cls);
         model.methodName = NSStringFromSelector(rd->sel);
         model.isClassMethod = class_isMetaClass(rd->cls);
@@ -71,7 +71,7 @@
 
     NSUInteger count = array.count;
     for (NSUInteger i = 0; i < count; i++) {
-        VVCallTraceTimeCostModel *model = array[i];
+        VVCallCostModel *model = array[i];
         if (model.callDepth > 0) {
             [array removeObjectAtIndex:i];
             //Todo:不需要循环，直接设置下一个，然后判断好边界就行

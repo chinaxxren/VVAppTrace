@@ -2,7 +2,7 @@
 #import <Foundation/Foundation.h>
 #import "VVCallTraceCore.h"
 
-@class VVCallTraceTimeCostModel;
+@class VVCallCostModel;
 
 @interface VVCallTrace : NSObject
 
@@ -15,14 +15,14 @@
 
 + (void)startWithMaxDepth:(int)depth minCost:(double)ms;
 
-+ (void)isOpenSaveRecords:(BOOL)save;
++ (void)isOnlyMainRecord:(BOOL)isMain;
 
-+ (void)isOnlyMainRecord:(BOOL)main;
++ (void)isOpenSaveRecords:(BOOL)isSave;
 
 // 停止记录
 + (void)stop;
 
-// 保存记录,返回结果用户自己处理
-+ (NSArray<VVCallTraceTimeCostModel *> *)getCallRecords;
+// 返回记录用户自己处理
++ (NSArray<VVCallCostModel *> *)getSaveRecords;
 
 @end

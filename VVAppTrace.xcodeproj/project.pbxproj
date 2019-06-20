@@ -16,7 +16,7 @@
 		B9BEADE51D253B97003303C1 /* VVAppTraceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BEADE41D253B97003303C1 /* VVAppTraceTests.m */; };
 		B9DE85A21F6A523600577A7C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DE85A11F6A523600577A7C /* MobileCoreServices.framework */; };
 		B9DE85A41F6A523D00577A7C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DE85A31F6A523D00577A7C /* ImageIO.framework */; };
-		B9FFD30222B9DAF60066D934 /* VVCallTraceTimeCostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD2F822B9DAF60066D934 /* VVCallTraceTimeCostModel.m */; };
+		B9FFD30222B9DAF60066D934 /* VVCallCostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD2F822B9DAF60066D934 /* VVCallCostModel.m */; };
 		B9FFD30322B9DAF60066D934 /* VVCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD2F922B9DAF60066D934 /* VVCallStack.m */; };
 		B9FFD30422B9DAF60066D934 /* VVCallTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD2FA22B9DAF60066D934 /* VVCallTrace.m */; };
 		B9FFD30522B9DAF60066D934 /* VVCallTraceCore.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD2FE22B9DAF60066D934 /* VVCallTraceCore.c */; };
@@ -58,10 +58,10 @@
 		B9BEADE61D253B97003303C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9DE85A11F6A523600577A7C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B9DE85A31F6A523D00577A7C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		B9FFD2F822B9DAF60066D934 /* VVCallTraceTimeCostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCallTraceTimeCostModel.m; sourceTree = "<group>"; };
+		B9FFD2F822B9DAF60066D934 /* VVCallCostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCallCostModel.m; sourceTree = "<group>"; };
 		B9FFD2F922B9DAF60066D934 /* VVCallStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCallStack.m; sourceTree = "<group>"; };
 		B9FFD2FA22B9DAF60066D934 /* VVCallTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCallTrace.m; sourceTree = "<group>"; };
-		B9FFD2FB22B9DAF60066D934 /* VVCallTraceTimeCostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCallTraceTimeCostModel.h; sourceTree = "<group>"; };
+		B9FFD2FB22B9DAF60066D934 /* VVCallCostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCallCostModel.h; sourceTree = "<group>"; };
 		B9FFD2FC22B9DAF60066D934 /* VVCallStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCallStack.h; sourceTree = "<group>"; };
 		B9FFD2FD22B9DAF60066D934 /* VVCallLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCallLib.h; sourceTree = "<group>"; };
 		B9FFD2FE22B9DAF60066D934 /* VVCallTraceCore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = VVCallTraceCore.c; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 				B9FFD2FA22B9DAF60066D934 /* VVCallTrace.m */,
 				B9FFD2FE22B9DAF60066D934 /* VVCallTraceCore.c */,
 				B9FFD2FF22B9DAF60066D934 /* VVCallTraceCore.h */,
-				B9FFD2FB22B9DAF60066D934 /* VVCallTraceTimeCostModel.h */,
-				B9FFD2F822B9DAF60066D934 /* VVCallTraceTimeCostModel.m */,
+				B9FFD2FB22B9DAF60066D934 /* VVCallCostModel.h */,
+				B9FFD2F822B9DAF60066D934 /* VVCallCostModel.m */,
 				B9FFD30722BA05D10066D934 /* VVLog.h */,
 				B9FFD30822BA05D10066D934 /* VVLog.c */,
 				B9FFD31022BA20BA0066D934 /* VVTrace.h */,
@@ -335,7 +335,7 @@
 				B9FFD31222BA20BA0066D934 /* VVTrace.c in Sources */,
 				B9FFD31522BB28560066D934 /* VVFishHook.c in Sources */,
 				B9BEADCF1D253B97003303C1 /* AppDelegate.m in Sources */,
-				B9FFD30222B9DAF60066D934 /* VVCallTraceTimeCostModel.m in Sources */,
+				B9FFD30222B9DAF60066D934 /* VVCallCostModel.m in Sources */,
 				B9FFD30622B9DAF60066D934 /* VVCallLib.m in Sources */,
 				B9FFD30322B9DAF60066D934 /* VVCallStack.m in Sources */,
 				B9BEADCC1D253B97003303C1 /* main.m in Sources */,
