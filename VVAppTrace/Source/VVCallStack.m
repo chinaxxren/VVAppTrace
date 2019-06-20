@@ -273,7 +273,7 @@ bool vv_dladdr(const uintptr_t address, Dl_info *const info) {
 
     /*--------------Mach Segment-------------*/
     //地址最匹配的symbol
-    const nlistByCPU *bestMatch = NULL;
+    const nlist_by_cpu *bestMatch = NULL;
     uintptr_t bestDistance = ULONG_MAX;
     uintptr_t cmdPointer = vv_cmd_first_pointer_from_mach_header(machHeader);
     if (cmdPointer == 0) {
@@ -288,7 +288,7 @@ bool vv_dladdr(const uintptr_t address, Dl_info *const info) {
         if (loadCmd->cmd == LC_SYMTAB) {
             //获取字符串和符号表的虚拟内存偏移量。
             const struct symtab_command *symtabCmd = (struct symtab_command *) cmdPointer;
-            const nlistByCPU *symbolTable = (nlistByCPU *) (segmentBase + symtabCmd->symoff);
+            const nlist_by_cpu *symbolTable = (nlist_by_cpu *) (segmentBase + symtabCmd->symoff);
             const uintptr_t stringTable = segmentBase + symtabCmd->stroff;
 
             for (uint32_t iSym = 0; iSym < symtabCmd->nsyms; iSym++) {
@@ -371,7 +371,7 @@ uintptr_t vv_cmd_first_pointer_from_mach_header(const struct mach_header *const 
         case MH_CIGAM:
         case MH_MAGIC_64:
         case MH_CIGAM_64:
-            return (uintptr_t) (((machHeaderByCPU *) machHeader) + 1);
+            return (uintptr_t) (((mach_header_by_cpu *) machHeader) + 1);
         default:
             return 0; // Header 不合法
     }
@@ -386,7 +386,7 @@ uintptr_t vv_segment_base_of_image_index(const uint32_t idx) {
     }
     for (uint32_t i = 0; i < machHeader->ncmds; i++) {
         const struct load_command *loadCmd = (struct load_command *) cmdPtr;
-        const segmentComandByCPU *segmentCmd = (segmentComandByCPU *) cmdPtr;
+        const segment_comand_by_cpu *segmentCmd = (segment_comand_by_cpu *) cmdPtr;
         if (strcmp(segmentCmd->segname, SEG_LINKEDIT) == 0) {
             return (uintptr_t) (segmentCmd->vmaddr - segmentCmd->fileoff);
         }

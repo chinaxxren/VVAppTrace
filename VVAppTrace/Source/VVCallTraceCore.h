@@ -11,11 +11,16 @@ typedef struct {
     SEL sel;
     uint64_t time; // us (1/1000 ms)
     int depth;
+    bool is_main_thread;
 } vv_call_record;
 
 extern void vv_call_trace_start(char *ios_path);
 
 extern void vv_call_trace_stop(void);
+
+extern void vv_save_record(bool save);
+
+extern void vv_main_record(bool main);
 
 //default 1000
 extern void vv_call_config_min_time(uint64_t us);

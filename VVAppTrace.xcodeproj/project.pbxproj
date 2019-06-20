@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		117393B2380D68DE03194807 /* libPods-AppTrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 591D5E0E3BD1ED884AB94DA8 /* libPods-AppTrace.a */; };
 		B93169BB1F16069B00415528 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B93169BA1F16069B00415528 /* Podfile */; };
 		B9BEADCC1D253B97003303C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BEADCB1D253B97003303C1 /* main.m */; };
 		B9BEADCF1D253B97003303C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BEADCE1D253B97003303C1 /* AppDelegate.m */; };
@@ -24,6 +23,8 @@
 		B9FFD30622B9DAF60066D934 /* VVCallLib.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD30122B9DAF60066D934 /* VVCallLib.m */; };
 		B9FFD30922BA05D10066D934 /* VVLog.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD30822BA05D10066D934 /* VVLog.c */; };
 		B9FFD31222BA20BA0066D934 /* VVTrace.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD31122BA20BA0066D934 /* VVTrace.c */; };
+		B9FFD31522BB28560066D934 /* VVFishHook.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD31422BB28560066D934 /* VVFishHook.c */; };
+		C8C0CEC59F84F9ACC1A9C8B0 /* libPods-VVAppTrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 696810A2941924AAFD6D0813 /* libPods-VVAppTrace.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0328A1CEAA9021647937493C /* Pods-VVAppTrace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VVAppTrace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VVAppTrace/Pods-VVAppTrace.debug.xcconfig"; sourceTree = "<group>"; };
 		0C93B04B9AAC753151749DC8 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		3AAF1C589869FCF59B2C0C55 /* Pods-AppTrace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTrace.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTrace/Pods-AppTrace.release.xcconfig"; sourceTree = "<group>"; };
-		591D5E0E3BD1ED884AB94DA8 /* libPods-AppTrace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTrace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65B9B7B99358859C2DA4564F /* Pods-VVAppTrace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VVAppTrace.release.xcconfig"; path = "Pods/Target Support Files/Pods-VVAppTrace/Pods-VVAppTrace.release.xcconfig"; sourceTree = "<group>"; };
+		696810A2941924AAFD6D0813 /* libPods-VVAppTrace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VVAppTrace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93169BA1F16069B00415528 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B9BEADC71D253B97003303C1 /* VVAppTrace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VVAppTrace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9BEADCB1D253B97003303C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,6 +72,8 @@
 		B9FFD30822BA05D10066D934 /* VVLog.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = VVLog.c; sourceTree = "<group>"; };
 		B9FFD31022BA20BA0066D934 /* VVTrace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVTrace.h; sourceTree = "<group>"; };
 		B9FFD31122BA20BA0066D934 /* VVTrace.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = VVTrace.c; sourceTree = "<group>"; };
+		B9FFD31322BB28560066D934 /* VVFishHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVFishHook.h; sourceTree = "<group>"; };
+		B9FFD31422BB28560066D934 /* VVFishHook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = VVFishHook.c; sourceTree = "<group>"; };
 		D77E7D40B81E7A5863108530 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		F2D747F8A17F99C4B61E8F27 /* Pods-AppTrace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTrace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTrace/Pods-AppTrace.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +85,7 @@
 			files = (
 				B9DE85A41F6A523D00577A7C /* ImageIO.framework in Frameworks */,
 				B9DE85A21F6A523600577A7C /* MobileCoreServices.framework in Frameworks */,
-				117393B2380D68DE03194807 /* libPods-AppTrace.a in Frameworks */,
+				C8C0CEC59F84F9ACC1A9C8B0 /* libPods-VVAppTrace.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +104,7 @@
 			children = (
 				B9DE85A31F6A523D00577A7C /* ImageIO.framework */,
 				B9DE85A11F6A523600577A7C /* MobileCoreServices.framework */,
-				591D5E0E3BD1ED884AB94DA8 /* libPods-AppTrace.a */,
+				696810A2941924AAFD6D0813 /* libPods-VVAppTrace.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,6 +116,8 @@
 				0C93B04B9AAC753151749DC8 /* Pods-Demo.release.xcconfig */,
 				F2D747F8A17F99C4B61E8F27 /* Pods-AppTrace.debug.xcconfig */,
 				3AAF1C589869FCF59B2C0C55 /* Pods-AppTrace.release.xcconfig */,
+				0328A1CEAA9021647937493C /* Pods-VVAppTrace.debug.xcconfig */,
+				65B9B7B99358859C2DA4564F /* Pods-VVAppTrace.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -186,6 +193,8 @@
 				B9FFD30822BA05D10066D934 /* VVLog.c */,
 				B9FFD31022BA20BA0066D934 /* VVTrace.h */,
 				B9FFD31122BA20BA0066D934 /* VVTrace.c */,
+				B9FFD31322BB28560066D934 /* VVFishHook.h */,
+				B9FFD31422BB28560066D934 /* VVFishHook.c */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -305,7 +314,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AppTrace-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-VVAppTrace-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -324,6 +333,7 @@
 				B9FFD30922BA05D10066D934 /* VVLog.c in Sources */,
 				B9FFD30422B9DAF60066D934 /* VVCallTrace.m in Sources */,
 				B9FFD31222BA20BA0066D934 /* VVTrace.c in Sources */,
+				B9FFD31522BB28560066D934 /* VVFishHook.c in Sources */,
 				B9BEADCF1D253B97003303C1 /* AppDelegate.m in Sources */,
 				B9FFD30222B9DAF60066D934 /* VVCallTraceTimeCostModel.m in Sources */,
 				B9FFD30622B9DAF60066D934 /* VVCallLib.m in Sources */,
@@ -470,7 +480,7 @@
 		};
 		B9BEADEA1D253B97003303C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2D747F8A17F99C4B61E8F27 /* Pods-AppTrace.debug.xcconfig */;
+			baseConfigurationReference = 0328A1CEAA9021647937493C /* Pods-VVAppTrace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/VVAppTrace/Info.plist";
@@ -483,7 +493,7 @@
 		};
 		B9BEADEB1D253B97003303C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AAF1C589869FCF59B2C0C55 /* Pods-AppTrace.release.xcconfig */;
+			baseConfigurationReference = 65B9B7B99358859C2DA4564F /* Pods-VVAppTrace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/VVAppTrace/Info.plist";
