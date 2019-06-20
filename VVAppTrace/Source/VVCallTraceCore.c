@@ -27,10 +27,8 @@ static uint64_t _min_time_cost = 1000; //us
 static int _max_call_depth = 3;
 static pthread_key_t _thread_key;
 __unused static id (*orig_objc_msgSend)(id, SEL, ...);
-
+static char *prefix_system = "OS_";
 static vv_call_record *_vv_call_records;
-//static int otp_record_num;
-//static int otp_record_alloc;
 static int _vv_record_num;
 static int _vv_record_alloc;
 
@@ -49,13 +47,15 @@ typedef struct {
     bool is_main_thread;
 } thread_call_stack;
 
-static inline bool has_prefix(const char *target, char *prefix) {
-    uint64_t count = strlen(prefix);
+static bool has_prefix_system(const char *target) {
     bool ret = true;
-    if (strlen(target) < count)
-        return false;
-    for (int i = 0; i < count; i++) {
-        if (target[i] != prefix[i]) {
+    for (int i = 0; i < 3; i++) {
+        if(target[i] == '\0') {
+            ret = false;
+            break;
+        }
+        
+        if (target[i] != prefix_system[i]) {
             ret = false;
             break;
         }
@@ -98,13 +98,13 @@ static inline void push_call_record(id _self, Class _cls, SEL _cmd, uintptr_t lr
         new_record->cmd = _cmd;
         new_record->lr = lr;
     
-        if (has_prefix(class_getName(_cls), "OS_")) {
-            return;
-        }
-        
-        vv_begin_section(sel_getName(new_record->cmd));
-        
-        if(_call_record_enabled) {
+        if(_call_record_enabled && _is_main_thread) {
+            if (has_prefix_system(class_getName(_cls))) {
+                return;
+            }
+
+            vv_begin_section(sel_getName(new_record->cmd));
+
             struct timeval now;
             gettimeofday(&now, NULL);
             new_record->time = (now.tv_sec % 100) * 1000000 + now.tv_usec;
@@ -117,13 +117,14 @@ static inline uintptr_t pop_call_record() {
     int curIndex = cs->index;
     int nextIndex = cs->index--;
     thread_call_record *p_record = &cs->stack[nextIndex];
-    if (has_prefix(class_getName(p_record->cls), "OS_")) {
-        return p_record->lr;
-    }
     
-    vv_end_section(sel_getName(p_record->cmd));
-    
-    if (_call_record_enabled) {
+    if (_call_record_enabled && _is_main_thread) {
+        if (has_prefix_system(class_getName(p_record->cls))) {
+            return p_record->lr;
+        }
+
+        vv_end_section(sel_getName(p_record->cmd));
+
         struct timeval now;
         gettimeofday(&now, NULL);
         uint64_t time = (now.tv_sec % 100) * 1000000 + now.tv_usec;
@@ -131,14 +132,15 @@ static inline uintptr_t pop_call_record() {
             time += 100 * 1000000;
         }
         uint64_t cost = time - p_record->time;
+
         if (cost > _min_time_cost && cs->index < _max_call_depth) {
             printf("trace->[%s %s] %6.2f\n",class_getName(p_record->cls),sel_getName(p_record->cmd),cost/1000.0f);
-            
+
             if (_save_record_enabled) {
                 if (_is_main_thread && !cs->is_main_thread) {
                     return p_record->lr;
                 }
-                
+
                 if (!_vv_call_records) {
                     _vv_record_alloc = 1024;
                     _vv_call_records = (vv_call_record *)malloc(sizeof(vv_call_record) * _vv_record_alloc);
@@ -249,8 +251,9 @@ void vv_call_trace_start(char *ios_path) {
         fish_rebind_symbols((struct rebinding[6]){
             {"objc_msgSend", (void *)hook_Objc_msgSend, (void **)&orig_objc_msgSend},
         }, 1);
-        vv_open(ios_path);
     });
+    
+    vv_open(ios_path);
 }
 
 void vv_call_trace_stop(void) {
