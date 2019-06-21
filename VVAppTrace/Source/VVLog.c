@@ -26,15 +26,6 @@ void vv_log_close(void);
 
 bool vv_log_add_line(const char *line);
 
-int vv_strlen(const char *str) {
-    int i = 0;
-    while((*str++)!='\0') {
-        i++;
-    }
-    
-    return i;
-}
-
 bool vv_log_open(const char *log_path) {
     vv_log_close();
 
@@ -82,7 +73,7 @@ bool vv_log_add_line(const char *line) {
     if (!file_cur_)
         return false;
 
-    size_t len = vv_strlen(line);
+    size_t len = strlen(line);
     if (cur_size_ + len + 1 > block_size) {
         printf("file full");
         return false;

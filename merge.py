@@ -23,9 +23,8 @@ class Merger:
 
     def append(self,line):
         line = line.strip('\n')
-        #print len(line),' : ', line
         self.output.write(line)
-        self.output.write(',\n')
+        self.output.write('\n')
 
     def merge_file(self,file_path):
         print file_path
@@ -33,6 +32,7 @@ class Merger:
         file = open(file_path)
         while True:
             line = file.readline()
+            
             if not line or len(line) == 0:
                 break
             if line[0] != '{':
@@ -42,11 +42,7 @@ class Merger:
     def run(self):
         i = 0
         while True:
-            if i == 0:
-                file_path = os.path.join(self.dir,"trace.appletrace")
-            else:
-                file_path = os.path.join(self.dir,"trace_%d.appletrace" % (i))
-
+            file_path = os.path.join(self.dir,"trace_%d.appletrace" % (i))
             if not os.path.exists(file_path):
                 break
 
@@ -61,7 +57,7 @@ def main():
     if options.dir is None:
         p.print_help();
         return
-
+    
     if options.dir:
         # merge into json
         m = Merger(options.dir)

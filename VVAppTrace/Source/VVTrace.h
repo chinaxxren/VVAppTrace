@@ -1,15 +1,15 @@
 
-#include <stdio.h>
-#include <stdbool.h>
+#import <Foundation/Foundation.h>
 
+@interface VVTrace : NSObject
 
-#ifndef VVTrace_h
-#define VVTrace_h
+// 开始检测
++ (void)startTrace;
 
-bool vv_open(char *ios_path);
+// 暂停检测，不再写入检测数据
++ (void)endTrace;
 
-void vv_begin_section(const char *name);
+// 设置打印最小方法执行时间 单位毫秒 默认为1毫秒
++ (void)setMinDuration:(int)minDuration;
 
-void vv_end_section(const char *name);
-
-#endif /* VVTrace_h */
+@end

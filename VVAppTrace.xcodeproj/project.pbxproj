@@ -16,14 +16,10 @@
 		B9BEADE51D253B97003303C1 /* VVAppTraceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BEADE41D253B97003303C1 /* VVAppTraceTests.m */; };
 		B9DE85A21F6A523600577A7C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DE85A11F6A523600577A7C /* MobileCoreServices.framework */; };
 		B9DE85A41F6A523D00577A7C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9DE85A31F6A523D00577A7C /* ImageIO.framework */; };
-		B9FFD30222B9DAF60066D934 /* VVCallCostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD2F822B9DAF60066D934 /* VVCallCostModel.m */; };
-		B9FFD30322B9DAF60066D934 /* VVCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD2F922B9DAF60066D934 /* VVCallStack.m */; };
-		B9FFD30422B9DAF60066D934 /* VVCallTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD2FA22B9DAF60066D934 /* VVCallTrace.m */; };
-		B9FFD30522B9DAF60066D934 /* VVCallTraceCore.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD2FE22B9DAF60066D934 /* VVCallTraceCore.c */; };
-		B9FFD30622B9DAF60066D934 /* VVCallLib.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD30122B9DAF60066D934 /* VVCallLib.m */; };
-		B9FFD30922BA05D10066D934 /* VVLog.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD30822BA05D10066D934 /* VVLog.c */; };
-		B9FFD31222BA20BA0066D934 /* VVTrace.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD31122BA20BA0066D934 /* VVTrace.c */; };
-		B9FFD31522BB28560066D934 /* VVFishHook.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD31422BB28560066D934 /* VVFishHook.c */; };
+		B9FFD37222BC7F550066D934 /* VVFishHook.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD36A22BC7F540066D934 /* VVFishHook.c */; };
+		B9FFD37322BC7F550066D934 /* VVTraceImpl.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD36E22BC7F540066D934 /* VVTraceImpl.c */; };
+		B9FFD37422BC7F550066D934 /* VVLog.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD36F22BC7F540066D934 /* VVLog.c */; };
+		B9FFD37522BC7F550066D934 /* VVTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD37022BC7F540066D934 /* VVTrace.m */; };
 		C8C0CEC59F84F9ACC1A9C8B0 /* libPods-VVAppTrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 696810A2941924AAFD6D0813 /* libPods-VVAppTrace.a */; };
 /* End PBXBuildFile section */
 
@@ -58,22 +54,14 @@
 		B9BEADE61D253B97003303C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9DE85A11F6A523600577A7C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B9DE85A31F6A523D00577A7C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		B9FFD2F822B9DAF60066D934 /* VVCallCostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCallCostModel.m; sourceTree = "<group>"; };
-		B9FFD2F922B9DAF60066D934 /* VVCallStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCallStack.m; sourceTree = "<group>"; };
-		B9FFD2FA22B9DAF60066D934 /* VVCallTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCallTrace.m; sourceTree = "<group>"; };
-		B9FFD2FB22B9DAF60066D934 /* VVCallCostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCallCostModel.h; sourceTree = "<group>"; };
-		B9FFD2FC22B9DAF60066D934 /* VVCallStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCallStack.h; sourceTree = "<group>"; };
-		B9FFD2FD22B9DAF60066D934 /* VVCallLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCallLib.h; sourceTree = "<group>"; };
-		B9FFD2FE22B9DAF60066D934 /* VVCallTraceCore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = VVCallTraceCore.c; sourceTree = "<group>"; };
-		B9FFD2FF22B9DAF60066D934 /* VVCallTraceCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCallTraceCore.h; sourceTree = "<group>"; };
-		B9FFD30022B9DAF60066D934 /* VVCallTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVCallTrace.h; sourceTree = "<group>"; };
-		B9FFD30122B9DAF60066D934 /* VVCallLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVCallLib.m; sourceTree = "<group>"; };
-		B9FFD30722BA05D10066D934 /* VVLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVLog.h; sourceTree = "<group>"; };
-		B9FFD30822BA05D10066D934 /* VVLog.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = VVLog.c; sourceTree = "<group>"; };
-		B9FFD31022BA20BA0066D934 /* VVTrace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVTrace.h; sourceTree = "<group>"; };
-		B9FFD31122BA20BA0066D934 /* VVTrace.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = VVTrace.c; sourceTree = "<group>"; };
-		B9FFD31322BB28560066D934 /* VVFishHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVFishHook.h; sourceTree = "<group>"; };
-		B9FFD31422BB28560066D934 /* VVFishHook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = VVFishHook.c; sourceTree = "<group>"; };
+		B9FFD36A22BC7F540066D934 /* VVFishHook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = VVFishHook.c; sourceTree = "<group>"; };
+		B9FFD36B22BC7F540066D934 /* VVFishHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVFishHook.h; sourceTree = "<group>"; };
+		B9FFD36C22BC7F540066D934 /* VVTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVTrace.h; sourceTree = "<group>"; };
+		B9FFD36D22BC7F540066D934 /* VVLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVLog.h; sourceTree = "<group>"; };
+		B9FFD36E22BC7F540066D934 /* VVTraceImpl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = VVTraceImpl.c; sourceTree = "<group>"; };
+		B9FFD36F22BC7F540066D934 /* VVLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = VVLog.c; sourceTree = "<group>"; };
+		B9FFD37022BC7F540066D934 /* VVTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVTrace.m; sourceTree = "<group>"; };
+		B9FFD37122BC7F540066D934 /* VVTraceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVTraceImpl.h; sourceTree = "<group>"; };
 		D77E7D40B81E7A5863108530 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		F2D747F8A17F99C4B61E8F27 /* Pods-AppTrace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTrace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTrace/Pods-AppTrace.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,22 +167,14 @@
 		B9FFD2F422B9DA6C0066D934 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B9FFD2FD22B9DAF60066D934 /* VVCallLib.h */,
-				B9FFD30122B9DAF60066D934 /* VVCallLib.m */,
-				B9FFD2FC22B9DAF60066D934 /* VVCallStack.h */,
-				B9FFD2F922B9DAF60066D934 /* VVCallStack.m */,
-				B9FFD30022B9DAF60066D934 /* VVCallTrace.h */,
-				B9FFD2FA22B9DAF60066D934 /* VVCallTrace.m */,
-				B9FFD2FE22B9DAF60066D934 /* VVCallTraceCore.c */,
-				B9FFD2FF22B9DAF60066D934 /* VVCallTraceCore.h */,
-				B9FFD2FB22B9DAF60066D934 /* VVCallCostModel.h */,
-				B9FFD2F822B9DAF60066D934 /* VVCallCostModel.m */,
-				B9FFD30722BA05D10066D934 /* VVLog.h */,
-				B9FFD30822BA05D10066D934 /* VVLog.c */,
-				B9FFD31022BA20BA0066D934 /* VVTrace.h */,
-				B9FFD31122BA20BA0066D934 /* VVTrace.c */,
-				B9FFD31322BB28560066D934 /* VVFishHook.h */,
-				B9FFD31422BB28560066D934 /* VVFishHook.c */,
+				B9FFD36A22BC7F540066D934 /* VVFishHook.c */,
+				B9FFD36B22BC7F540066D934 /* VVFishHook.h */,
+				B9FFD36F22BC7F540066D934 /* VVLog.c */,
+				B9FFD36D22BC7F540066D934 /* VVLog.h */,
+				B9FFD36C22BC7F540066D934 /* VVTrace.h */,
+				B9FFD37022BC7F540066D934 /* VVTrace.m */,
+				B9FFD36E22BC7F540066D934 /* VVTraceImpl.c */,
+				B9FFD37122BC7F540066D934 /* VVTraceImpl.h */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -328,16 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9FFD30522B9DAF60066D934 /* VVCallTraceCore.c in Sources */,
+				B9FFD37422BC7F550066D934 /* VVLog.c in Sources */,
+				B9FFD37322BC7F550066D934 /* VVTraceImpl.c in Sources */,
+				B9FFD37522BC7F550066D934 /* VVTrace.m in Sources */,
+				B9FFD37222BC7F550066D934 /* VVFishHook.c in Sources */,
 				B9BEADD21D253B97003303C1 /* ViewController.m in Sources */,
-				B9FFD30922BA05D10066D934 /* VVLog.c in Sources */,
-				B9FFD30422B9DAF60066D934 /* VVCallTrace.m in Sources */,
-				B9FFD31222BA20BA0066D934 /* VVTrace.c in Sources */,
-				B9FFD31522BB28560066D934 /* VVFishHook.c in Sources */,
 				B9BEADCF1D253B97003303C1 /* AppDelegate.m in Sources */,
-				B9FFD30222B9DAF60066D934 /* VVCallCostModel.m in Sources */,
-				B9FFD30622B9DAF60066D934 /* VVCallLib.m in Sources */,
-				B9FFD30322B9DAF60066D934 /* VVCallStack.m in Sources */,
 				B9BEADCC1D253B97003303C1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
