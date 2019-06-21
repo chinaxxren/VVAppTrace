@@ -81,10 +81,7 @@ bool vv_log_add_line(const char *line) {
 
     memcpy(file_cur_, line, len);
     file_cur_ += len;
-    memcpy(file_cur_, (const char *) "\n", 1);
-    file_cur_ += 1;
-
-    cur_size_ += len + 1;
+    cur_size_ += len;
     return true;
 }
 

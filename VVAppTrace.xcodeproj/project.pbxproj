@@ -20,6 +20,9 @@
 		B9FFD37322BC7F550066D934 /* VVTraceImpl.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD36E22BC7F540066D934 /* VVTraceImpl.c */; };
 		B9FFD37422BC7F550066D934 /* VVLog.c in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD36F22BC7F540066D934 /* VVLog.c */; };
 		B9FFD37522BC7F550066D934 /* VVTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FFD37022BC7F540066D934 /* VVTrace.m */; };
+		C3AE64C86C1AC003F79A8126 /* VVShowLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6B50B8876D507F34045E /* VVShowLogController.m */; };
+		C3AE66AFE25F798F7FE13E5D /* VVFileReader.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6BB2433C1DD1081EFEC7 /* VVFileReader.m */; };
+		C3AE6F49D56B2A3E54A93EDB /* VVShowLogVM.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6A979FDE0D6B0CE524D9 /* VVShowLogVM.m */; };
 		C8C0CEC59F84F9ACC1A9C8B0 /* libPods-VVAppTrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 696810A2941924AAFD6D0813 /* libPods-VVAppTrace.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,12 @@
 		B9FFD36F22BC7F540066D934 /* VVLog.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = VVLog.c; sourceTree = "<group>"; };
 		B9FFD37022BC7F540066D934 /* VVTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVTrace.m; sourceTree = "<group>"; };
 		B9FFD37122BC7F540066D934 /* VVTraceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVTraceImpl.h; sourceTree = "<group>"; };
+		C3AE656C5818B26C22BD2549 /* VVShowLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVShowLogController.h; sourceTree = "<group>"; };
+		C3AE66FF9B03114D86D6FC1F /* VVFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVFileReader.h; sourceTree = "<group>"; };
+		C3AE692B533B4476B270D6E2 /* VVShowLogVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVShowLogVM.h; sourceTree = "<group>"; };
+		C3AE6A979FDE0D6B0CE524D9 /* VVShowLogVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVShowLogVM.m; sourceTree = "<group>"; };
+		C3AE6B50B8876D507F34045E /* VVShowLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVShowLogController.m; sourceTree = "<group>"; };
+		C3AE6BB2433C1DD1081EFEC7 /* VVFileReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVFileReader.m; sourceTree = "<group>"; };
 		D77E7D40B81E7A5863108530 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		F2D747F8A17F99C4B61E8F27 /* Pods-AppTrace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTrace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTrace/Pods-AppTrace.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,10 +109,10 @@
 		41B641E75737E36121115F77 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D77E7D40B81E7A5863108530 /* Pods-Demo.debug.xcconfig */,
-				0C93B04B9AAC753151749DC8 /* Pods-Demo.release.xcconfig */,
 				F2D747F8A17F99C4B61E8F27 /* Pods-AppTrace.debug.xcconfig */,
 				3AAF1C589869FCF59B2C0C55 /* Pods-AppTrace.release.xcconfig */,
+				D77E7D40B81E7A5863108530 /* Pods-Demo.debug.xcconfig */,
+				0C93B04B9AAC753151749DC8 /* Pods-Demo.release.xcconfig */,
 				0328A1CEAA9021647937493C /* Pods-VVAppTrace.debug.xcconfig */,
 				65B9B7B99358859C2DA4564F /* Pods-VVAppTrace.release.xcconfig */,
 			);
@@ -113,12 +122,12 @@
 		B9BEADBE1D253B97003303C1 = {
 			isa = PBXGroup;
 			children = (
+				09268CC64126FE7E65528C7C /* Frameworks */,
 				B93169BA1F16069B00415528 /* Podfile */,
+				41B641E75737E36121115F77 /* Pods */,
+				B9BEADC81D253B97003303C1 /* Products */,
 				B9BEADC91D253B97003303C1 /* VVAppTrace */,
 				B9BEADE31D253B97003303C1 /* VVAppTraceTests */,
-				B9BEADC81D253B97003303C1 /* Products */,
-				41B641E75737E36121115F77 /* Pods */,
-				09268CC64126FE7E65528C7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,14 +144,14 @@
 			isa = PBXGroup;
 			children = (
 				B9FFD2F422B9DA6C0066D934 /* Source */,
+				B9BEADCA1D253B97003303C1 /* Supporting Files */,
 				B9BEADCD1D253B97003303C1 /* AppDelegate.h */,
 				B9BEADCE1D253B97003303C1 /* AppDelegate.m */,
+				B9BEADD61D253B97003303C1 /* Assets.xcassets */,
+				B9BEADDB1D253B97003303C1 /* Info.plist */,
+				B9BEADD81D253B97003303C1 /* LaunchScreen.storyboard */,
 				B9BEADD01D253B97003303C1 /* ViewController.h */,
 				B9BEADD11D253B97003303C1 /* ViewController.m */,
-				B9BEADD61D253B97003303C1 /* Assets.xcassets */,
-				B9BEADD81D253B97003303C1 /* LaunchScreen.storyboard */,
-				B9BEADDB1D253B97003303C1 /* Info.plist */,
-				B9BEADCA1D253B97003303C1 /* Supporting Files */,
 			);
 			path = VVAppTrace;
 			sourceTree = "<group>";
@@ -158,8 +167,8 @@
 		B9BEADE31D253B97003303C1 /* VVAppTraceTests */ = {
 			isa = PBXGroup;
 			children = (
-				B9BEADE41D253B97003303C1 /* VVAppTraceTests.m */,
 				B9BEADE61D253B97003303C1 /* Info.plist */,
+				B9BEADE41D253B97003303C1 /* VVAppTraceTests.m */,
 			);
 			path = VVAppTraceTests;
 			sourceTree = "<group>";
@@ -167,10 +176,16 @@
 		B9FFD2F422B9DA6C0066D934 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C3AE66FF9B03114D86D6FC1F /* VVFileReader.h */,
+				C3AE6BB2433C1DD1081EFEC7 /* VVFileReader.m */,
 				B9FFD36A22BC7F540066D934 /* VVHook.c */,
 				B9FFD36B22BC7F540066D934 /* VVHook.h */,
 				B9FFD36F22BC7F540066D934 /* VVLog.c */,
 				B9FFD36D22BC7F540066D934 /* VVLog.h */,
+				C3AE656C5818B26C22BD2549 /* VVShowLogController.h */,
+				C3AE6B50B8876D507F34045E /* VVShowLogController.m */,
+				C3AE692B533B4476B270D6E2 /* VVShowLogVM.h */,
+				C3AE6A979FDE0D6B0CE524D9 /* VVShowLogVM.m */,
 				B9FFD36C22BC7F540066D934 /* VVTrace.h */,
 				B9FFD37022BC7F540066D934 /* VVTrace.m */,
 				B9FFD36E22BC7F540066D934 /* VVTraceImpl.c */,
@@ -267,9 +282,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B93169BB1F16069B00415528 /* Podfile in Resources */,
-				B9BEADDA1D253B97003303C1 /* LaunchScreen.storyboard in Resources */,
 				B9BEADD71D253B97003303C1 /* Assets.xcassets in Resources */,
+				B9BEADDA1D253B97003303C1 /* LaunchScreen.storyboard in Resources */,
+				B93169BB1F16069B00415528 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,12 +323,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9FFD37422BC7F550066D934 /* VVLog.c in Sources */,
-				B9FFD37322BC7F550066D934 /* VVTraceImpl.c in Sources */,
-				B9FFD37522BC7F550066D934 /* VVTrace.m in Sources */,
-				B9FFD37222BC7F550066D934 /* VVHook.c in Sources */,
-				B9BEADD21D253B97003303C1 /* ViewController.m in Sources */,
 				B9BEADCF1D253B97003303C1 /* AppDelegate.m in Sources */,
+				C3AE66AFE25F798F7FE13E5D /* VVFileReader.m in Sources */,
+				B9FFD37222BC7F550066D934 /* VVHook.c in Sources */,
+				B9FFD37422BC7F550066D934 /* VVLog.c in Sources */,
+				C3AE64C86C1AC003F79A8126 /* VVShowLogController.m in Sources */,
+				C3AE6F49D56B2A3E54A93EDB /* VVShowLogVM.m in Sources */,
+				B9FFD37522BC7F550066D934 /* VVTrace.m in Sources */,
+				B9FFD37322BC7F550066D934 /* VVTraceImpl.c in Sources */,
+				B9BEADD21D253B97003303C1 /* ViewController.m in Sources */,
 				B9BEADCC1D253B97003303C1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

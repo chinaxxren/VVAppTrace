@@ -59,19 +59,19 @@ void write_method_log(char *obj, char *sel, uint64_t beginElapsed, uint64_t endE
     if (main_thread_id == thread_id) {
         sprintf(thread_name, "%s", "main");
     } else {
-        sprintf(thread_name, "sub[%llu]", thread_id);
+        sprintf(thread_name, "sub-%llu", thread_id);
     }
 
     // [class]sel
     unsigned long repl_len = strlen(obj) + strlen(sel) + 10;
     char *repl_name = malloc(repl_len);
-    snprintf(repl_name, repl_len, "[%s]%s", obj, sel);
+    snprintf(repl_name, repl_len, "%s-%s", obj, sel);
 
     // print
     char begin_str[512];
     char end_str[512];
     sprintf(begin_str, "{\"name\":\"%s\",\"cat\":\"catname\",\"ph\":\"%s\",\"pid\":666,\"tid\":\"%s\",\"ts\":%llu},\n", repl_name, "B", thread_name, beginElapsed);
-    sprintf(end_str, "{\"name\":\"%s\",\"cat\":\"catname\",\"ph\":\"%s\",\"pid\":666,\"tid\":\"%s\",\"ts\":%llu},", repl_name, "E", thread_name, endElapsed);
+    sprintf(end_str, "{\"name\":\"%s\",\"cat\":\"catname\",\"ph\":\"%s\",\"pid\":666,\"tid\":\"%s\",\"ts\":%llu},\n", repl_name, "E", thread_name, endElapsed);
     unsigned long begin_length = strlen(begin_str);
     unsigned long end_length = strlen(end_str);
     unsigned long length = begin_length + end_length + 10;
@@ -137,6 +137,7 @@ uintptr_t get_lr() {
     thread_lr_stack *ls = pthread_getspecific(_thread_lr_stack_key);
     pthread_setspecific(_thread_lr_stack_key, (void *) ls->pre);
     uintptr_t lr = ls->lr;
+
     // log
     if (vv_print > 0) {
         uint64_t time = lcs_getCurrentTime();
