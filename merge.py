@@ -1,14 +1,7 @@
 #!/usr/bin/env python
-#
-# created by everettjf 20170915
-#
-# Input  : Path of directory , which include raw *.ostrace files.
-# Output : Path of output json file , which will be given to catapult.
-#
 
 import os
 from optparse import OptionParser
-
 
 class Merger:
     def __init__(self,dir):
