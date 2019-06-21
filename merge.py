@@ -20,7 +20,6 @@ class Merger:
         self.output.write('\n')
 
     def merge_file(self,file_path):
-        print file_path
 
         file = open(file_path)
         while True:
