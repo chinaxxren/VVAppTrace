@@ -20,7 +20,7 @@
 #include <dlfcn.h>
 #include <mach-o/dyld.h>
 
-#include "VVFishHook.h"
+#include "VVHook.h"
 #include "VVLog.h"
 
 static long method_min_duration = 1000; // 1000 microseconds

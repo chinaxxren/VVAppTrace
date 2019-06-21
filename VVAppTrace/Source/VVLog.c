@@ -90,15 +90,15 @@ bool vv_log_add_line(const char *line) {
 
 static char *base_path;
 static int file_cout;
-static char path[1024];
+static char log_path[1024];
 
 void log_base_path(char *ios_path) {
     base_path = ios_path;
 }
 
 char *get_file_path() {
-    sprintf(path, "%s/trace_%d.appletrace", base_path, file_cout);
-    return path;
+    sprintf(log_path, "%s/trace_%d.appletrace", base_path, file_cout);
+    return log_path;
 }
 
 bool log_open() {
