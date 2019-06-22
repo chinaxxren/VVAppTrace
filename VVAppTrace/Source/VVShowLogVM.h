@@ -5,9 +5,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class VVLogModel;
-
-
 @interface VVShowLogVM : NSObject
 
 @property(nonatomic, strong) NSMutableArray<NSString *> *dataList;

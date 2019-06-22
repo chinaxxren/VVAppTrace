@@ -33,6 +33,7 @@
             
             NSDictionary *beginDict;
             while (lineData && [lineData length] > 0) {
+                // 删除','符号
                 lineData = [lineData subdataWithRange:NSMakeRange(0, lineData.length - 2)];
                 NSError *error;
                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:lineData options:NSJSONReadingAllowFragments error:&error];
