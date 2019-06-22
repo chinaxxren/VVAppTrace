@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "VVAppTrace"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "VVAppTrace 跟踪ios方法执行性能工具"
   spec.homepage     = "https://github.com/chinaxxren/VVAppTrace"
   spec.license      = "MIT"
